@@ -18,6 +18,7 @@
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
+    "express": "^4.18.1",
     "imagekitio-angular": "^1.0.2",
     "primeng": "13.4.1",
     "rxjs": "~7.5.0",
@@ -38,8 +39,8 @@
     "karma-jasmine-html-reporter": "~1.7.0",
     "typescript": "~4.6.2"
   },
-  "engines" : {
-    "npm" : "8.15.0",
-    "node" : "18.7.0"
+  "engines": {
+    "npm": "8.15.0",
+    "node": "18.7.0"
   }
 }
