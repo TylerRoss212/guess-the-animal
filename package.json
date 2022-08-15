@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node dist/guess-the-animal index.html $PORT",
+    "start": "node server.js",
     "build": "ng build --aot",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
