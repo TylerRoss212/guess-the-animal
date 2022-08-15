@@ -19,4 +19,8 @@ export class HelloComponent implements OnInit {
             console.log(data);
         })
     }
+
+    onClick() {
+        alert("ELI IS A COOL DOODE");
+    }
 }
