@@ -15,7 +15,7 @@ export class HelloComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.http.get(this.baseUrl + "api/hello").subscribe((data) => {
+        this.http.get(this.baseUrl + "/api/hello").subscribe((data) => {
             console.log(data);
         })
     }
