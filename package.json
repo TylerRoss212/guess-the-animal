@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node app.module.ts",
+    "start": "node dist/app",
     "build": "ng build --aot",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
