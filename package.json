@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "heroku-postbuild": "ng biuld --prod && npm install -g http-server-spa",
+    "heroku-postbuild": "ng biuld --prod && npm install -g --force http-server-spa",
     "start": "http-server-spa dis/guess-the-animal index.html $PORT",
     "start local": "ng serve",
     "build": "ng build",
@@ -21,7 +21,7 @@
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
     "imagekitio-angular": "^1.0.2",
-    "primeng": "^14.0.1 --force",
+    "primeng": "^14.0.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
