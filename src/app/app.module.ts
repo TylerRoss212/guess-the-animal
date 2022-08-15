@@ -5,17 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello/hello.component';
 import {HttpClientModule} from "@angular/common/http";
+import {ImagekitioAngularModule} from "imagekitio-angular";
 
 @NgModule({
   declarations: [
     AppComponent,
     HelloComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        ImagekitioAngularModule.forRoot({
+            publicKey: 'public_yD2jgQTMYACqznDndUnUxoCFh2A=',
+            urlEndpoint: 'https://ik.imagekit.io/tylerross/'
+        })
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

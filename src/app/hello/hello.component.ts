@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {environment} from "../../environments/environment";
 
 @Component({
     selector: 'app-hello',
@@ -8,14 +9,14 @@ import {HttpClient} from "@angular/common/http";
 })
 export class HelloComponent implements OnInit {
 
-    name: String = "";
+    baseUrl = environment.baseUrl;
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient) {
+    }
 
     ngOnInit(): void {
-        this.http.get("http://localhost:8080/hello").subscribe((data) => {
+        this.http.get(this.baseUrl + "api/hello").subscribe((data) => {
             console.log(data);
         })
     }
-
 }
