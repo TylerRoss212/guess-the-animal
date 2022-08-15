@@ -3,9 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "heroku-postbuild": "ng biuld --prod",
-    "start": "http-server-spa dist/guess-the-animal index.html $PORT",
-    "start-local": "ng serve",
+    "heroku-postbuild": "ng build --prod",
+    "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
