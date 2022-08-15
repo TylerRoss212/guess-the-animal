@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "heroku-postbuild": "ng biuld --prod && npm install -g http-server-spa",
+    "heroku-postbuild": "ng biuld --prod",
     "start": "http-server-spa dist/guess-the-animal index.html $PORT",
     "start-local": "ng serve",
     "build": "ng build",
