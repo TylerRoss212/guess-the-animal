@@ -10,17 +10,23 @@ import {environment} from "../../environments/environment";
 export class HelloComponent implements OnInit {
 
     baseUrl = environment.baseUrl;
+    displayClicks: number = 0;
 
     constructor(private http: HttpClient) {
     }
 
     ngOnInit(): void {
-        this.http.get(this.baseUrl + "/api/hello").subscribe((data) => {
-            console.log(data);
-        })
+        this.displayClicks = Number(localStorage.getItem("clicks"));
     }
 
     onClick() {
-        alert("ELI IS A COOL DOODE");
+        let clicks = Number(localStorage.getItem("clicks"));
+        if (clicks == null) {
+            clicks = 1;
+        } else {
+            clicks++;
+        }
+        this.displayClicks = clicks;
+        localStorage.setItem("clicks", String(clicks));
     }
 }
