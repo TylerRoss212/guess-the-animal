@@ -1,0 +1,37 @@
+.header {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #F4F3EE;
+    line-height: 0;
+    margin-top: 32px;
+}
+
+.header-button {
+    background-color: #232020;
+    border: 0;
+    cursor: pointer;
+}
+
+.left {
+    margin-left: 128px;
+}
+
+.right {
+    margin-right: 128px;
+}
+
+.header-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.h1 {
+    width: 278px;
+    height: 100px;
+}
+
+::ng-deep .custom-dialog {
+    background-color: #232020;
+    color: #F4F3EE;
+    backdrop-filter: blur(20px);
+}

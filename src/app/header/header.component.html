@@ -1,0 +1,16 @@
+<div class="header">
+    <button class="header-button right">
+        <img src="assets/icons/info.png" class="header-icon">
+    </button>
+    <h1 class="text">Guess The Animal</h1>
+    <button class="header-button left" (click)="showStats()">
+        <img src="assets/icons/stats.png" class="header-icon">
+    </button>
+    <button class="header-button">
+        <img src="assets/icons/help.png" class="header-icon">
+    </button>
+</div>
+<p-dialog styleClass="custom-dialog" header="Stats" [(visible)]="displayStats" [draggable]="false" [resizable]="false"
+    [modal]="true" [responsive]="true">
+    <h1>HELLO WORLD</h1>
+</p-dialog>

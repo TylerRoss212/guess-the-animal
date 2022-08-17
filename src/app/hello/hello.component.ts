@@ -20,13 +20,9 @@ export class HelloComponent implements OnInit {
     }
 
     onClick() {
-        let clicks = Number(localStorage.getItem("clicks"));
-        if (clicks == null) {
-            clicks = 1;
-        } else {
-            clicks++;
-        }
-        this.displayClicks = clicks;
-        localStorage.setItem("clicks", String(clicks));
+        let audio = new Audio()
+        audio.src = "https://storage.googleapis.com/guesstheanimal/1_2.mp3"
+        audio.load();
+        audio.play();
     }
 }

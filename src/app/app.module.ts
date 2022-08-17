@@ -5,21 +5,26 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello/hello.component';
 import {HttpClientModule} from "@angular/common/http";
-import {ImagekitioAngularModule} from "imagekitio-angular";
+import { HeaderComponent } from './header/header.component';
+import { HintComponent } from './hint/hint.component';
+import { GuessComponent } from './guess/guess.component';
+import {DialogModule} from "primeng/dialog";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
     AppComponent,
-    HelloComponent
+    HelloComponent,
+    HeaderComponent,
+    HintComponent,
+    GuessComponent
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
-        ImagekitioAngularModule.forRoot({
-            publicKey: 'public_yD2jgQTMYACqznDndUnUxoCFh2A=',
-            urlEndpoint: 'https://ik.imagekit.io/tylerross/'
-        })
+        DialogModule,
+        BrowserAnimationsModule
     ],
   providers: [],
   bootstrap: [AppComponent]
