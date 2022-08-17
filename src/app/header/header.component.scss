@@ -24,15 +24,17 @@
 }
 
 .left {
-
+    margin-left: 12px;
 }
 
 .right {
-
+    margin-right: 12px;
 }
 
 .header {
     border-bottom: solid 1px #F4F3EE;
     display: flex;
     justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
