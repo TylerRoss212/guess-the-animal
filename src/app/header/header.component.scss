@@ -19,25 +19,20 @@
 
 .header-text {
     font-size: 32px;
-    margin: 0;
     text-align: center;
+    margin: 0;
 }
 
 .left {
-    display: flex;
-    flex-direction: row;
-    margin-right: 100px;
+
 }
 
 .right {
-    display: flex;
-    flex-direction: row;
-    margin-left: 100px;
+
 }
 
 .header {
     border-bottom: solid 1px #F4F3EE;
     display: flex;
-    flex-direction: row;
-    max-width: 900px;
+    justify-content: space-between;
 }
