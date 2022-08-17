@@ -19,8 +19,4 @@ export class HeaderComponent implements OnInit {
       this.displayStats = true;
   }
 
-  logit() {
-      console.log("OPEN");
-  }
-
 }
