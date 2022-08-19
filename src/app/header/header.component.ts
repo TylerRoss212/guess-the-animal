@@ -8,11 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   displayStats: boolean = false;
+  prod: boolean = environment.logTestProd;
 
   constructor() {
   }
 
   ngOnInit(): void {
+    console.log(prod);
   }
 
   showStats() {
