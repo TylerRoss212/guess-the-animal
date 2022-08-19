@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'app-header',
@@ -9,7 +8,6 @@ import {environment} from "../../environments/environment";
 export class HeaderComponent implements OnInit {
 
   displayStats: boolean = false;
-  prod = environment.production;
 
   constructor() {
   }
