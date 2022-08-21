@@ -1,0 +1,38 @@
+input {
+    background-color: #232020;
+    color: #F4F3EE;
+    width: auto;
+    height: 32px;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+}
+
+textarea {
+    overflow: auto;
+}
+
+.notFocused {
+    border: 1px solid #34332E;
+}
+
+.focused {
+    border: 1px solid #F4F3EE;
+}
+
+.skipBtn, .submitBtn {
+    margin-top: 12px;
+    background-color: #232020;
+    border: 1px solid #F4F3EE;
+    color: #F4F3EE;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    padding: 10px 16px;
+}
+
+.skipBtn:hover, .submitBtn:hover {
+    opacity: .75;
+    cursor: pointer;
+}

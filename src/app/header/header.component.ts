@@ -17,12 +17,6 @@ export class HeaderComponent implements OnInit {
     }
 
     ngOnInit(): void {
-      this.http.get(this.baseUrl + "/api/animals/findAll").subscribe((data) => {
-          console.log(data);
-      })
-      this.http.get(this.baseUrl + "/api/animals/getNumber").subscribe((data) => {
-          console.log(data);
-      })
     }
 
     showStats() {

@@ -28,10 +28,14 @@
 
 .left {
     margin-left: 12px;
+    display: flex;
+    flex-direction: row;
 }
 
 .right {
     margin-right: 12px;
+    display: flex;
+    flex-direction: row;
 }
 
 .header {

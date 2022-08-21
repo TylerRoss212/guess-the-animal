@@ -1,1 +1,11 @@
-<p>guess works!</p>
+<div style="display: flex; justify-content: center; margin-top: 12px;">
+    <div style="max-width: 450px; width: 100%">
+        <div [class]="focus ? 'focused' : 'notFocused'">
+            <input id="guess" (keyup)="onInput()" type="text" placeholder="Guess" (focusin)="focus = true" (focusout)="focus = false">
+        </div>
+        <div style="display: flex; justify-content: space-between">
+            <button class="skipBtn">SKIP</button>
+            <button class="submitBtn">SUBMIT</button>
+        </div>
+    </div>
+</div>
