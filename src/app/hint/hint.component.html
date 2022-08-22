@@ -1,3 +1,11 @@
 <div style="display: flex; justify-content: center; margin-top: 20px;">
-    <img src="https://storage.googleapis.com/guesstheanimal/0/0_0.png">
+    <img [src]="getUrl()">
+</div>
+<div style="display: flex; justify-content: center;">
+    <div class="selector"><button [disabled]="isButtonDisabled(0)">1</button></div>
+    <div class="selector"><button [disabled]="isButtonDisabled(1)">2</button></div>
+    <div class="selector"><button [disabled]="isButtonDisabled(2)">3</button></div>
+    <div class="selector"><button [disabled]="isButtonDisabled(3)">4</button></div>
+    <div class="selector"><button [disabled]="isButtonDisabled(4)">5</button></div>
+    <div class="selector"><button [disabled]="isButtonDisabled(5)">6</button></div>
 </div>

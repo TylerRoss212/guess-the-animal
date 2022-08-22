@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CURRENT_GUESS_NUM_KEY, GUESSES_KEY, NUMBER_KEY} from "../constants";
+import {CURRENT_GUESS_NUM_KEY, GUESSES_KEY, ANIMAL_NUMBER_KEY} from "../constants";
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 import {Animal} from "../animal/Animal";
@@ -18,7 +18,7 @@ export class GuessComponent implements OnInit {
     currentGuessNum: Number = 0;
     guesses: String[] = [];
 
-    number: Number = 0;
+    animalNumber: Number = 0;
 
     animalList: Animal[] = [];
     searchList: Animal[] = [];
@@ -26,7 +26,7 @@ export class GuessComponent implements OnInit {
     constructor(private http: HttpClient) { }
 
     ngOnInit(): void {
-        this.checkNumber();
+        this.getNumber();
         this.getCurrentGuessNum();
         this.getGuesses();
         this.getAnimalList();
@@ -55,6 +55,11 @@ export class GuessComponent implements OnInit {
         })
     }
 
+    getNumber() {
+        this.animalNumber = Number(localStorage.getItem(ANIMAL_NUMBER_KEY));
+    }
+
+    /*
     checkNumber() {
         // get the number from the backend
         this.http.get(this.baseUrl + "/api/animals/getNumber").subscribe((number) => {
@@ -69,6 +74,7 @@ export class GuessComponent implements OnInit {
             }
         })
     }
+    */
 
     getCurrentGuessNum() {
         // get the guess number from memory
