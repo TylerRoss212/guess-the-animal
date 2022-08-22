@@ -1,7 +1,42 @@
-img {
+.hintImg {
     width: 36%;
     height: auto;
     min-height: 200px;
     min-width: 356px;
     border: 1px solid #F4F3EE;
+}
+
+.selector {
+    background-color: #232020;
+    font-family: sans-serif;
+    text-align: center;
+    padding: 4px 8px;
+    color: #F4F3EE;
+    border: 1px solid #F4F3EE;
+}
+
+.selector:hover {
+    cursor: pointer;
+    opacity: 50%;
+}
+
+.selector:disabled {
+    cursor: not-allowed;
+    opacity: 30%;
+}
+
+.audioButton {
+    background-color: #232020;
+    width: 55px;
+    height: 55px;
+    margin: 0;
+    border: 0;
+    padding-bottom: 8.28%;
+    padding-top: 8.28%;
+    max-height: 389px;
+}
+
+.audioButton:hover {
+    opacity: 75%;
+    cursor: pointer;
 }
