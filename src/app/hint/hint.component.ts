@@ -24,8 +24,7 @@ export class HintComponent implements OnInit {
     }
 
     getPictureNumber() {
-        //this.pictureNumber = Number(localStorage.getItem(CURRENT_GUESS_NUM_KEY));
-        this.pictureNumber = 5;
+        this.pictureNumber = Number(localStorage.getItem(CURRENT_GUESS_NUM_KEY));
         this.guessNumber = this.pictureNumber;
         if (this.pictureNumber == 1) {
             this.isAudio = true;
