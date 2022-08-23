@@ -1,16 +1,16 @@
 <div style="display: flex; justify-content: center; margin-top: 20px;">
     <img [src]="getUrl()" *ngIf="!isAudio" class="hintImg">
-    <img [src]="buttonUrl" *ngIf="isAudio" class="audioButton">
+    <img [src]="getButtonUrl()" *ngIf="isAudio" class="audioButton" (click)="audioButton()">
 </div>
 <div style="display: flex; justify-content: center;">
     <div style="max-width: 250px; width: 100%;">
         <div style="display: flex; flex-display: row; justify-content: space-between; margin-top: 12px;">
-            <button class="selector" [disabled]="isButtonDisabled(0)" (click)="changeHint(0)">1</button>
-            <button class="selector" [disabled]="isButtonDisabled(1)" (click)="changeHint(1)">2</button>
-            <button class="selector" [disabled]="isButtonDisabled(2)" (click)="changeHint(2)">3</button>
-            <button class="selector" [disabled]="isButtonDisabled(3)" (click)="changeHint(3)">4</button>
-            <button class="selector" [disabled]="isButtonDisabled(4)" (click)="changeHint(4)">5</button>
-            <button class="selector" [disabled]="isButtonDisabled(5)" (click)="changeHint(5)">6</button>
+            <button [class]="isSelected(0) ? 'selected' : 'selector'" [disabled]="isButtonDisabled(0)" (click)="changeHint(0)">1</button>
+            <button [class]="isSelected(1) ? 'selected' : 'selector'" [disabled]="isButtonDisabled(1)" (click)="changeHint(1)">2</button>
+            <button [class]="isSelected(2) ? 'selected' : 'selector'" [disabled]="isButtonDisabled(2)" (click)="changeHint(2)">3</button>
+            <button [class]="isSelected(3) ? 'selected' : 'selector'" [disabled]="isButtonDisabled(3)" (click)="changeHint(3)">4</button>
+            <button [class]="isSelected(4) ? 'selected' : 'selector'" [disabled]="isButtonDisabled(4)" (click)="changeHint(4)">5</button>
+            <button [class]="isSelected(5) ? 'selected' : 'selector'" [disabled]="isButtonDisabled(5)" (click)="changeHint(5)">6</button>
         </div>
     </div>
 </div>

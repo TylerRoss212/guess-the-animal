@@ -1,7 +1,7 @@
 export class Animal {
-    private id: Number;
+    public id: Number;
     public name: String;
-    private classification: String;
+    public classification: String;
 
     constructor(id: Number, name: String, classification: String) {
         this.id = id;

@@ -13,14 +13,30 @@ export class HintComponent implements OnInit {
     guessNumber: Number = 0;
 
     isAudio: boolean = false;
+    audio: HTMLAudioElement = new Audio();
 
-    buttonUrl: String = "assets/icons/play.png";
+    buttonBaseUrl: String = "assets/icons/";
 
     constructor(private changeDetectorRef: ChangeDetectorRef) { }
 
     ngOnInit(): void {
         this.getPictureNumber();
         this.getAnimalNumber();
+        this.setUpAudio()
+
+    }
+
+    setUpAudio() {
+        this.audio.src = "https://storage.googleapis.com/guesstheanimal/" + this.animalNumber + "/1.mp3";
+        this.getButtonUrl()
+    }
+
+    getButtonUrl() {
+        if (!this.audio.paused) {
+            return this.buttonBaseUrl + "stop.png";
+        } else {
+            return this.buttonBaseUrl + "play.png";
+        }
     }
 
     getPictureNumber() {
@@ -60,6 +76,26 @@ export class HintComponent implements OnInit {
 
         this.pictureNumber = hintNumber;
         this.changeDetectorRef.detectChanges();
+    }
+
+    audioButton() {
+        if (this.audio.paused) {
+            this.audio.load();
+            this.audio.play().then(() => {
+                this.changeDetectorRef.detectChanges();
+            });
+        } else {
+            this.audio.pause();
+            this.changeDetectorRef.detectChanges();
+        }
+    }
+
+    isSelected(id: number): boolean {
+        if (id == this.pictureNumber) {
+            return true;
+        }
+
+        return false;
     }
 
 }

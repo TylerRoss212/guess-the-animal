@@ -45,8 +45,6 @@ export class GuessComponent implements OnInit {
                 }
             }
         }
-
-        console.log(this.searchList);
     }
 
     getAnimalList() {
@@ -58,23 +56,6 @@ export class GuessComponent implements OnInit {
     getNumber() {
         this.animalNumber = Number(localStorage.getItem(ANIMAL_NUMBER_KEY));
     }
-
-    /*
-    checkNumber() {
-        // get the number from the backend
-        this.http.get(this.baseUrl + "/api/animals/getNumber").subscribe((number) => {
-            this.number = Number(number);
-
-            // check if the stored number matches
-            if (this.number != Number(localStorage.getItem(NUMBER_KEY))) {
-                // if the numbers do not match reset values
-                localStorage.setItem(CURRENT_GUESS_NUM_KEY, "0");
-                localStorage.setItem(GUESSES_KEY, "[]");
-                localStorage.setItem(NUMBER_KEY, String(this.number));
-            }
-        })
-    }
-    */
 
     getCurrentGuessNum() {
         // get the guess number from memory
@@ -89,6 +70,21 @@ export class GuessComponent implements OnInit {
                 this.guesses.push(guess);
             })
         }
+    }
+
+    submitGuess() {
+        // @ts-ignore
+        let guess = String(document.getElementById("guess").value);
+        // @ts-ignore
+        document.getElementById("guess").value = "";
+
+        guess = guess.toLowerCase();
+
+        this.http.post<Animal>(this.baseUrl + "/api/animals/findByName", guess).subscribe((animal) => {
+            console.log("Animal Name: " + animal.name);
+            console.log("Animal ID: " + animal.id);
+            console.log("Animal Class: " + animal.classification);
+        })
     }
 
 }

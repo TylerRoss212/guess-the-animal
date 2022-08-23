@@ -6,6 +6,15 @@
     border: 1px solid #F4F3EE;
 }
 
+.selected {
+    background-color: #232020;
+    font-family: sans-serif;
+    text-align: center;
+    padding: 4px 8px;
+    color: #99B8FF;
+    border: 1px solid #99B8FF;
+}
+
 .selector {
     background-color: #232020;
     font-family: sans-serif;
@@ -31,9 +40,8 @@
     height: 55px;
     margin: 0;
     border: 0;
-    padding-bottom: 8.28%;
-    padding-top: 8.28%;
-    max-height: 389px;
+    padding-bottom: 8.75%;
+    padding-top: 8.75%;
 }
 
 .audioButton:hover {
