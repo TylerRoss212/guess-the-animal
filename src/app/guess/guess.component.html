@@ -1,21 +1,32 @@
-<li style="display: flex; justify-content: center; flex-direction: column; margin-top: 12px;">
+<li *ngFor="let guess of guesses" style="display: flex; justify-content: center; flex-direction: column; margin-top: 12px;">
     <div style="display: flex; justify-content: center;">
         <div class="guessWrapper">
-            <span class="guess wrong">Jack Phillips</span><span class="guess right" style="padding-right: 12px; opacity: 60%;">Mammal</span>
+            <span class="guess" [class]="guess.value.key ? 'right' : 'wrong'">{{ guess.key.name }}</span>
+            <span class="guess" [class]="guess.value.value ? 'right' : 'wrong'" style="padding-right: 12px;">{{ guess.key.classification }}</span>
         </div>
     </div>
 </li>
-<div style="display: flex; justify-content: center; margin-top: 12px;">
+<div *ngIf="!done" style="display: flex; justify-content: center; margin-top: 12px;">
     <div style="max-width: 450px; width: 100%">
         <div [class]="focus ? 'focused' : 'notFocused'">
             <form (submit)="submitGuess()">
-                <input id="guess" (keyup)="onInput()" type="text" placeholder="Guess" maxlength="256"
+                <input id="guess" (keyup)="onInput()" type="text" placeholder="Guess" maxlength="256" style="max-width: 434px; width: 100%;"
                        autocomplete="off" (focusin)="focus = true" (focusout)="focus = false">
             </form>
         </div>
+        <div style="position: absolute;">
+            <li *ngFor="let animal of searchList" class="popdownList">
+                    <div class="popdownText" (click)="searchClick(animal.name)">{{ animal.name }}</div>
+            </li>
+        </div>
         <div style="display: flex; justify-content: space-between">
-            <button class="skipBtn">SKIP</button>
+            <button class="skipBtn" (click)="skip()">SKIP</button>
             <button class="submitBtn" (click)="submitGuess()">SUBMIT</button>
         </div>
     </div>
+</div>
+<div *ngIf="done" style="display: flex; justify-content: center; margin-top: 12px;">
+    <button id="shareBtn" class="share" (click)="getShareString()">
+        SHARE
+    </button>
 </div>

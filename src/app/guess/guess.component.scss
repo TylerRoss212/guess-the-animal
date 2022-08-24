@@ -71,3 +71,48 @@ textarea {
     max-width: 436px;
     width: 100%;
 }
+
+.share {
+    text-align: center;
+    font-size: 16px;
+    font-family: sans-serif;
+    background-color: #232020;
+    color: #99B8FF;
+    border: 1px solid #99B8FF;
+    padding: 12px 16px;
+}
+
+.share:hover {
+    opacity: 60%;
+    cursor: pointer;
+}
+
+.clicked {
+    border-color: #7fff83;
+    color: #7fff83;
+}
+
+.popdownList {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    border: 1px solid rgba(244, 243, 238, 60%);
+    border-top: 0;
+    max-width: 218px;
+    width: 100%;
+    background-color: #232020;
+}
+
+.popdownText {
+    text-align: center;
+    color: #F4F3EE;
+    font-size: 16px;
+    font-family: sans-serif;
+    padding: 11px 12px;
+
+}
+
+.popdownText:hover {
+    opacity: 65%;
+    cursor: pointer;
+}
