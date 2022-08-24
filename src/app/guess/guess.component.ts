@@ -19,6 +19,7 @@ export class GuessComponent implements OnInit {
     currentGuessNum: number = 0;
     guesses: Array<{key: Animal, value: {key: boolean, value: boolean}}> = new Array<{key: Animal; value: {key: boolean; value: boolean}}>();
     done: boolean = false;
+    correctAnimalName: String = "";
 
     animalNumber: Number = 0;
 
@@ -35,9 +36,20 @@ export class GuessComponent implements OnInit {
     ngOnInit(): void {
         this.getNumber();
         this.getDone();
+        this.getCorrectAnimalName();
         this.getCurrentGuessNum();
         this.getGuesses();
         this.getAnimalList();
+    }
+
+    getCorrectAnimalName() {
+        this.http.get<Animal>(this.baseUrl + "/api/animals/findById/" + this.animalNumber).subscribe((animal) => {
+           this.correctAnimalName = animal.name ;
+        });
+    }
+
+    gotCorrect() {
+        return this.guesses[this.guesses.length - 1].value.key;
     }
 
     getDone() {

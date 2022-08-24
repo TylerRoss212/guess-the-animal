@@ -25,7 +25,14 @@
         </div>
     </div>
 </div>
-<div *ngIf="done" style="display: flex; justify-content: center; margin-top: 12px;">
+<div *ngIf="done" style="display: flex; justify-content: center; text-align: center;">
+    <p *ngIf="gotCorrect()" class="gotIt">You got it!</p>
+    <div *ngIf="!gotCorrect()" style="display: flex; justify-content: center; flex-direction: column;">
+        <p class="gotWrong">The answer was...</p>
+        <p class="correctAnimalName">{{ correctAnimalName }}</p>
+    </div>
+</div>
+<div *ngIf="done" style="display: flex; justify-content: center;">
     <button id="shareBtn" class="share" (click)="getShareString()">
         {{ shareText }}
     </button>
