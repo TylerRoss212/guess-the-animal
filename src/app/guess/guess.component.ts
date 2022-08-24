@@ -26,6 +26,7 @@ export class GuessComponent implements OnInit {
     searchList: Animal[] = [];
 
     copied: boolean = false;
+    shareText: String = "SHARE";
 
     constructor(private http: HttpClient,
                 private changeDetectorRef: ChangeDetectorRef,
@@ -145,10 +146,12 @@ export class GuessComponent implements OnInit {
         let btn = document.getElementById("shareBtn");
         // @ts-ignore
         btn.classList.toggle("clicked");
+        this.shareText = "COPIED";
         setTimeout(() => {
             // @ts-ignore
             btn.classList.toggle("clicked");
-        }, 400);
+            this.shareText = "SHARE";
+        }, 750);
 
         let res = "Guess The Animal #" + this.animalNumber + "\n\n"
 

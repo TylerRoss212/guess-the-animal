@@ -19,8 +19,4 @@ export class HeaderComponent implements OnInit {
     ngOnInit(): void {
     }
 
-    showStats() {
-      this.displayStats = true;
-    }
-
 }
