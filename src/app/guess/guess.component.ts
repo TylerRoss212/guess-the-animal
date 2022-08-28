@@ -64,8 +64,7 @@ export class GuessComponent implements OnInit {
         // search the animal list
         if (guess != "") {
             for (let animal of this.animalList) {
-                if ((animal.name.toLowerCase().includes(guess.toLowerCase())) &&
-                    (animal.name.toLowerCase() != guess.toLowerCase())) {
+                if (animal.name.toLowerCase().includes(guess.toLowerCase())) {
                     if (this.searchList.length < 6) {
                         this.searchList.push(animal);
                     }
